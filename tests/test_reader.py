@@ -11,9 +11,8 @@ def test_file_reader():
         for _ in reader:
             pass
 
-    dir_path = os.path.join(os.path.abspath(__file__),
-                            os.path.pardir,
-                            'res/single_file_test')
+    file_dir = os.path.dirname(os.path.abspath(__file__))
+    dir_path = os.path.join(file_dir, 'res/single_file_test')
     with FileReader(dir_path) as reader:
         words = []
         for word in reader:
@@ -24,9 +23,8 @@ def test_file_reader():
         assert words[2] == 'Third'
         assert words[3] == 'Fourth'
 
-    dir_path = os.path.join(os.path.abspath(__file__),
-                            os.path.pardir,
-                            'res/multi_file_test')
+    file_dir = os.path.dirname(os.path.abspath(__file__))
+    dir_path = os.path.join(file_dir, 'res/multi_file_test')
     with FileReader(dir_path) as reader:
         words = []
         for word in reader:
