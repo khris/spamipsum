@@ -29,10 +29,11 @@ def test_file_reader():
         words = []
         for word in reader:
             words.append(word)
+        first_words = ('First', 'AAA', 'QQQ')
         assert len(words) == (4 + 1) * 3
-        assert words[(4 + 1) * 0] == 'First'
+        assert words[(4 + 1) * 0] in first_words
         assert isinstance(words[(4 + 1) * 1 - 1], EOD)
-        assert words[(4 + 1) * 1] == 'AAA'
+        assert words[(4 + 1) * 1] in first_words
         assert isinstance(words[(4 + 1) * 2 - 1], EOD)
-        assert words[(4 + 1) * 2] == 'QQQ'
+        assert words[(4 + 1) * 2] in first_words
         assert isinstance(words[(4 + 1) * 3 - 1], EOD)
