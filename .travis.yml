@@ -8,3 +8,10 @@ install:
 
 script:
   - "py.test tests"
+
+notifications:
+  irc:
+    channels:
+    - "irc.ozinger.org#khris"
+    on_success: change
+    on_failure: always
